@@ -1,0 +1,16 @@
+<div class="notification">
+    <div class="notification-container">
+        <div [ngClass]="isNotificationOver ? 'blue-circle' : 'grey-circle'" style="margin: auto;" class="notification-circle blue">
+            <div class="icon-container">
+                <i *ngIf="isNotificationOver" class="material-icons check-icon">check</i>
+                <i *ngIf="!isNotificationOver" class="material-icons event-icon">event</i>
+            </div>
+        </div>
+        <div class="grey-text">
+            <div>
+                {{dateString}}
+            </div>
+        </div>
+    </div>
+    <app-notification-progress-bar *ngIf="!!this.notificationProgress" [daysNumber]="this.notificationProgress.numberOfDays" [progress]="this.notificationProgress.progress"></app-notification-progress-bar>
+</div>

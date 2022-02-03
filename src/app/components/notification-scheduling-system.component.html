@@ -1,0 +1,17 @@
+<div *ngIf="this.notificationSchedule.notifications.length" class="notification-container">
+    <div class="borders">
+        <div>
+            <div class="days-count"> Days to hardblock note:
+                 <div class="number">{{totalDaysNumber}}</div>
+            </div>
+        </div>
+        <app-notification 
+        *ngFor="let notification of notificationSchedule.notifications; let i=index;"
+        class="notification-container"
+        [index]="i"
+        [notificationProgress]="notificationProgress[i]"
+        [notification]="notification"
+        [ngStyle]="{'right': 10*i+'px'}">
+        </app-notification>
+    </div>
+</div>
